@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        function res(){
+            a=document.getElementById("marks1").value
+            b=document.getElementById("marks2").value
+            c=document.getElementById("marks3").value
+            d=document.getElementById("marks4").value
+            e=document.getElementById("marks5").value
+            sum=parseFloat(a)+parseFloat(b)+parseFloat(c)+parseFloat(d)+parseFloat(e)
+            document.getElementById("marks").innerHTML=sum
+            avrg=sum/5;
+            document.getElementById("avg").innerHTML=avrg
+            if(avrg<33)
+            {
+                document.getElementById("pass").innerHTML="FAIL."
+            }
+            else if(avrg>=33 && avrg<50)
+            {
+                document.getElementById("pass").innerHTML="GRADE C."
+            }
+            else if(avrg>=50 && avrg<75)
+            {
+                document.getElementById("pass").innerHTML="GRADE B."
+            }
+            else if(avrg>=75 && avrg<=100)
+            {
+                document.getElementById("pass").innerHTML="GRADE A."
+            }
+            else
+               {
+                document.getElementById("pass").innerHTML="Invalid Marks!!!"
+               }
+        }
+    </script>
+    <style>
+        body{
+            background-color: rgb(174, 222, 135);
+        }
+            .re{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  .main{
+    width: 60%;
+    position:absolute;
+    top: 10%;
+    background-color: bisque;
+    text-align: center;
+    border: 4px solid orange;
+  }
+    </style>
+</head>
+<body>
+    <div class="re">
+    <div class="main">
+        <div class="header"><h1>MARKS CALCULATOR</h1></div>
+        <p>Subject 1:
+          <input type="text" id="marks1" placeholder="ENTER MARKS">
+        </p>
+        <p>Subject 2:
+          <input type="text" id="marks2" placeholder="ENTER MARKS">
+        </p>
+        <p>Subject 3:
+          <input type="text" id="marks3" placeholder="ENTER MARKS">
+         </p>
+        <p>Subject 4:
+           <input type="text" id="marks4" placeholder="ENTER MARKS">
+         </p>
+         <p>Subject 5:
+              <input type="text" id="marks5" placeholder="ENTER MARKS">
+          </p>
+          <input type="button" value="Enter" id="btn" onclick="res()" >
+          <p>Total Marks:</p>
+          <p id="marks">
+            
+            </p>
+            <p>Average Marks:</p>
+            <p id="avg"> 
+             </p>  
+               <p id="pass"></p>   
+    </div>
+    </div>
+</body>
+</html>
